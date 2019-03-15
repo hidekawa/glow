@@ -88,6 +88,9 @@ sess = tensorflow_session()
 tf.import_graph_def(graph_def_optimized)
 
 print("Loaded model")
+#save model graph
+summary_writer = tf.summary.FileWriter("./graph")
+summary_writer.add_graph(sess.graph)
 
 n_eps = 6
 
@@ -227,7 +230,8 @@ def random(bs=1, eps_std=0.7):
 
 
 def test():
-    img = Image.open('test/img.png')
+#    img = Image.open('test/img.png')
+    img = Image.open('sample_img/img.png')
     img = np.reshape(np.array(img), [1, 256, 256, 3])
 
     # Encoding speed
@@ -244,12 +248,12 @@ def test():
         dec = decode(eps)
     print("Decoding latency {} sec/img".format((time.time() - t) / (1 * 10)))
     img = Image.fromarray(dec[0])
-    img.save('test/dec.png')
+    img.save('sample_img/dec.png')
 
     # Manipulation
-    dec, _ = manipulate(eps, _TAGS.index('Smiling'), 0.66)
+    dec, _ = manipulate(eps, _TAGS.index('Smiling'), 1.0)
     img = Image.fromarray(dec[0])
-    img.save('test/smile.png')
+    img.save('sample_img/smile.png')
 
 
 # warm start

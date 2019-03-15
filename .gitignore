@@ -102,3 +102,21 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+demo/blocksparse-1.0.0-py2.py3-none-any.whl
+logs/train.txt
+demo/shape_predictor_68_face_landmarks.dat
+demo/z_manipulate.npy
+demo/graph/events.out.tfevents.1552681386.dllecture
+demo/sample_img/816jLaiBejL._SL1500_.jpg
+demo/sample_img/dec.png
+demo/sample_img/img.png
+demo/sample_img/smile.png
+demo/sample_img/old/dec.png
+demo/sample_img/old/gen.jpg
+demo/sample_img/old/img.png
+demo/sample_img/old/smile.png
+demo/test/dec.png
+demo/test/smile.png
+graph/events.out.tfevents.1552679416.dllecture
+logs/test.txt
+demo/graph_optimized.pb
